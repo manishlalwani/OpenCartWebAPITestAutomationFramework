@@ -1,0 +1,14 @@
+[
+    {
+        "username": "wrong@open,com",
+        "password": "wrong123"
+    },
+    {
+        "username": "jacobbetthe1l@test.com",
+        "password": ""
+    },
+    {
+        "username": "jacobbetthel@test.com",
+        "password": "wrong123"
+    }
+]
