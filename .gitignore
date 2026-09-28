@@ -10,6 +10,7 @@ node_modules/
 /reporting-labs/
 /allure-results/
 /allure-report/
+reporting-labs.history.json
 
 #build
 dist/

@@ -3,6 +3,7 @@ import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv';
 import path from 'node:path';
 import { suite } from 'node:test';
+import reportingLabs from './reporting-labs.config';
 
 //npm install dotenv
 //ENV=qa npx playwright test
@@ -24,19 +25,19 @@ export default defineConfig({
 
   reporter: process.env.CI ?
     [
-      ['list'],
-      ['html', { outputfolder: "reports/html-report", open: "never" }],
+      ["list"],
+      ["html", { outputfolder: "reports/html-report", open: "never" }],
       ["allure-playwright", {
         outputfolder: "allure-results",
         suiteTitle: true,
-      }]
+      }], ['reporting-labs', reportingLabs]
     ] : [
-      ['list'],
-      ['html', { outputfolder: "reports/html-report", open: "never" }],
+      ["list"],
+      ["html", { outputfolder: "reports/html-report", open: "never" }],
       ["allure-playwright", {
         outputfolder: "allure-results",
         suiteTitle: true,
-      }]
+      }], ['reporting-labs', reportingLabs]
     ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
