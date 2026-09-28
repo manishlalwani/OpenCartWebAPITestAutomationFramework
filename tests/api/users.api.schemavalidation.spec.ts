@@ -47,7 +47,7 @@ let ajv = new Ajv();
 
 let userArraySchema = {
     "type": "array",
-    "items": JSON.parse(fs.readFileSync('../src/schema/userSchema.json','utf-8'))
+    "items": JSON.parse(fs.readFileSync('src/schema/userSchema.json','utf-8'))
 };
 
 //Test 1 - verify schema for single user response
