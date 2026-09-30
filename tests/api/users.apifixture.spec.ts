@@ -45,7 +45,7 @@ test.describe.serial('running e2e crud api test cases', () => {
 
     //DELETE
 
-    test('Delete API - delete a user', async ({ apiHelper }) => {
+    test('@regression Delete API - delete a user', async ({ apiHelper }) => {
 
         let response = await apiHelper.delete(`/public/v2/users/${userId}`, AUTH_HEADER);
         expect(response.status).toBe(204);
