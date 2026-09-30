@@ -52,7 +52,7 @@ let userArraySchema = {
 
 //Test 1 - verify schema for single user response
 // POST user -- > get id. --> GET Call using get id. --> 200
-test('get a single user - schema test', async ({ apiHelper }) => {
+test('@smoke get a single user - schema test', async ({ apiHelper }) => {
     //create a fresh user
     let userData = {
         name: 'apiautomation',
@@ -70,7 +70,7 @@ test('get a single user - schema test', async ({ apiHelper }) => {
 
     //verify user schema
 
-    let validate = ajv.compile(JSON.parse(fs.readFileSync('../src/schema/userSchema.json','utf-8')));
+    let validate = ajv.compile(JSON.parse(fs.readFileSync('src/schema/userSchema.json','utf-8')));
     let isScehmaValid = validate(getUserResponse.body)
 
     if (!isScehmaValid) {
@@ -83,7 +83,7 @@ test('get a single user - schema test', async ({ apiHelper }) => {
 });
 
 //test - verify schema for get all users api
-test('get all users - schema test', async ({ apiHelper }) => {
+test('@smoke get all users - schema test', async ({ apiHelper }) => {
 
     //get all users
     let getUsersResponse = await apiHelper.get(`/public/v2/users`, AUTH_HEADER);

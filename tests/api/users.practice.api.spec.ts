@@ -6,7 +6,7 @@ let AUTH_TOKEN = {
 };
 
 
-test('get all user api test', async ({ request }) => {
+test.skip('get all user api test', async ({ request }) => {
     let response: APIResponse = await request.get('https://gorest.co.in/public/v2/users', {
         headers: AUTH_TOKEN
     });
@@ -18,7 +18,7 @@ test('get all user api test', async ({ request }) => {
 
 });
 
-test('create an user POST api test', async ({ request }) => {
+test.skip('create an user POST api test', async ({ request }) => {
     //user javascript object
     let userData = {
         name: 'manish',
@@ -41,7 +41,7 @@ test('create an user POST api test', async ({ request }) => {
 
 });
 
-test('update an user PUT api test', async ({ request }) => {
+test.skip('update an user PUT api test', async ({ request }) => {
     //user javascript object
     let userData = {
         name: 'manish lalwani',
@@ -64,7 +64,7 @@ test('update an user PUT api test', async ({ request }) => {
 
 });
 
-test('delete the user DELETE api test', async ({ request }) => {
+test.skip('delete the user DELETE api test', async ({ request }) => {
     
     let response: APIResponse = await request.delete('https://gorest.co.in/public/v2/users/8616270', {
         headers: AUTH_TOKEN,

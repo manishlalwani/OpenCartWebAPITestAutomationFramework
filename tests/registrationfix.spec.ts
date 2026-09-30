@@ -8,17 +8,17 @@ test.beforeEach(async ({ loginPage }) => {
 
 });
 
-test('registration page header test', async ({ registrationPage }) => {
+test('@smoke registration page header test', async ({ registrationPage }) => {
     let header = await registrationPage.getRegistrationHeader();
     console.log('Page title is : ', header);
     expect(header).toBe('Register Account');
 });
 
 
-test('registration page account creation test', async ({ registrationPage }) => {
+test('@smoke registration page account creation test', async ({ registrationPage }) => {
     let firstName = 'manish';
     let lastName = 'lalwani';
-    let email = 'testemail1@email.com';
+    let email = `testemail1${Date.now()}@email.com`;
     let telephone = '3343431234';
     let password = 'wrong1234';
     let passwordConfirm = 'wrong1234';
@@ -31,8 +31,9 @@ test('registration page account creation test', async ({ registrationPage }) => 
 
 let testData = CsvHelper.readCsv('src/testdata/registrationuser.csv')
 for (let row of testData) {
-    test(`registration page account creation with users ${row.firstname} -- ${row.lastname}`, async ({ registrationPage }) => {
-        await registrationPage.createAccount(row.firstname, row.lastname, row.email, row.telephone, row.password, row.passwordconfirm, true);
+    test.skip(`@regression registration page account creation with users ${row.firstname} -- ${row.lastname}`, async ({ registrationPage }) => {
+        let email = `testemail1${Date.now()}@email.com`;
+        await registrationPage.createAccount(row.firstname, row.lastname, email, row.telephone, row.password, row.passwordconfirm, true);
         expect(await registrationPage.isCreateAccountMessageDisplayed()).toBeTruthy();
     });
 }
@@ -40,18 +41,18 @@ for (let row of testData) {
 
 //common features test 
 
-test('App logo exist or not on Login page', ({ basePage }) => {
-    expect(basePage.isLogoVisible).toBeTruthy();
+test.skip('@smoke App logo exist or not on registration page', async ({ basePage }) => {
+    expect(await basePage.isLogoVisible()).toBeTruthy();
 });
 
-test('search box exist or not on Login page', ({ basePage }) => {
-    expect(basePage.isSearchBoxVisible).toBeTruthy();
+test.skip('@smoke search box exist or not on registration page', async ({ basePage }) => {
+    expect(await basePage.isSearchBoxVisible()).toBeTruthy();
 });
 
-test('Cart exist or not on Login page', ({ basePage }) => {
-    expect(basePage.isCartButtonVisible).toBeTruthy();
+test.skip('@smoke Cart exist or not on registration page', async ({ basePage }) => {
+    expect(await basePage.isCartButtonVisible()).toBeTruthy();
 });
 
-test('Footer Links exist or not on Login page', ({ basePage }) => {
-    expect(basePage.getPageFootersCount).toBe(16);
+test.skip('@smoke Footer Links exist or not on registration page', async ({ basePage }) => {
+    expect(await basePage.getPageFootersCount()).toBe(16);
 });

@@ -11,14 +11,14 @@ let userId: number;
 test.describe.serial('running e2e crud api test cases', () => {
 
     //GET Test 
-    test('GET API - get all users', async ({ apiHelper }) => {
+    test('@regression @smoke GET API - get all users', async ({ apiHelper }) => {
         let response = await apiHelper.get('/public/v2/users', AUTH_HEADER);
         expect(response.status).toBe(200);
         expect(response.body.length).toBeGreaterThan(0);
     })
 
     ///POST 
-    test('POST API - create a user', async ({ apiHelper }) => {
+    test('@regression POST API - create a user', async ({ apiHelper }) => {
         let userData = {
             name: 'manish',
             email: `manishautomation_${Date.now()}@test.com`,
@@ -32,7 +32,7 @@ test.describe.serial('running e2e crud api test cases', () => {
 
 
     ///PUT 
-    test('PUT API - update a user', async ({ apiHelper }) => {
+    test('@regression PUT API - update a user', async ({ apiHelper }) => {
         let userData = {
             name: 'manish automation test',
             status: 'inactive'
@@ -52,7 +52,7 @@ test.describe.serial('running e2e crud api test cases', () => {
 
     });
 
-    test('GET API - verify user is deleted or not', async ({ apiHelper }) => {
+    test('@regression GET API - verify user is deleted or not', async ({ apiHelper }) => {
         let response = await apiHelper.get(`/public/v2/users/${userId}`, AUTH_HEADER);
         expect(response.status).toBe(404);
         expect(response.body.message).toBe('Resource not found');

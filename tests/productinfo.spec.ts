@@ -12,7 +12,7 @@ test.beforeEach(async ({ loginPage }) => {
 
 
 
-test('verify product header', async ({ homePage, searchResultsPage, productInfoPage, page }) => {
+test('@smoke verify product header', async ({ homePage, searchResultsPage, productInfoPage, page }) => {
     await homePage.doSearch('macbook');
     await searchResultsPage.selectProduct('MacBook Pro');
     expect(await productInfoPage.getProductHeader()).toBe('MacBook Pro');
@@ -21,7 +21,7 @@ test('verify product header', async ({ homePage, searchResultsPage, productInfoP
 });
 
 
-test('verify product images count', async ({ homePage, searchResultsPage, productInfoPage, page }) => {
+test('@regression verify product images count', async ({ homePage, searchResultsPage, productInfoPage, page }) => {
     await homePage.doSearch('macbook');
     await searchResultsPage.selectProduct('MacBook Pro');
     expect(await productInfoPage.getProductImagesCount()).toBe(4);
@@ -31,7 +31,7 @@ test('verify product images count', async ({ homePage, searchResultsPage, produc
 
 
 
-test('verify product data', async ({ homePage, searchResultsPage, productInfoPage, page }) => {
+test('@regression verify product data', async ({ homePage, searchResultsPage, productInfoPage, page }) => {
     await homePage.doSearch('macbook');
     await searchResultsPage.selectProduct('MacBook Pro');
     let actualProductInfoMap = await productInfoPage.getProductInfo();
@@ -49,18 +49,18 @@ test('verify product data', async ({ homePage, searchResultsPage, productInfoPag
 
 //common features test 
 
-test('App logo exist or not on Login page', ({ basePage }) => {
-    expect(basePage.isLogoVisible).toBeTruthy();
+test('@smoke App logo exist or not on product page', async ({ basePage }) => {
+    expect(await basePage.isLogoVisible()).toBeTruthy();
 });
 
-test('search box exist or not on Login page', ({ basePage }) => {
-    expect(basePage.isSearchBoxVisible).toBeTruthy();
+test('@smoke search box exist or not on product page', async ({ basePage }) => {
+    expect(await basePage.isSearchBoxVisible()).toBeTruthy();
 });
 
-test('Cart exist or not on Login page', ({ basePage }) => {
-    expect(basePage.isCartButtonVisible).toBeTruthy();
+test('@smoke Cart exist or not on product page', async ({ basePage }) => {
+    expect(await basePage.isCartButtonVisible()).toBeTruthy();
 });
 
-test('Footer Links exist or not on Login page', ({ basePage }) => {
-    expect(basePage.getPageFootersCount).toBe(16);
+test('@smoke Footer Links exist or not on product page', async ({ basePage }) => {
+    expect(await basePage.getPageFootersCount()).toBe(16);
 });

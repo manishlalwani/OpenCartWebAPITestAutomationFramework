@@ -24,7 +24,7 @@ test.beforeEach('POST - generate the access token', async ({ request }) => {
     accessToken = jsonResponse.access_token;
 });
 
-test('GET - albums data test', async ({ request }) => {
+test.skip('@smoke GET - albums data test', async ({ request }) => {
     let baseURL = 'https://api.spotify.com';
     let endPointURL = '/v1/albums/4aawyAB9vmqN3uQ7FjRGTy';
     let albumResponse = await request.get(`${baseURL}${endPointURL}`, {

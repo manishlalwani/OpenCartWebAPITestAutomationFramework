@@ -7,17 +7,17 @@ test.beforeEach(async ({ loginPage }) => {
     await loginPage.doLogin('jacobbetthel@test.com', 'test123');
 });
 
-test('home page title test', async ({ homePage }) => {
+test('@smoke home page title test', async ({ homePage }) => {
     let pageTitle = await homePage.getHomePageTitle();
     console.log('Home page title is ', pageTitle);
     expect(pageTitle).toBe('My Account');
 });
 
-test('logout link exists test', async ({ homePage }) => {
+test('@smoke logout link exists test', async ({ homePage }) => {
     expect(await homePage.isLogoutLinkExist()).toBeTruthy();
 });
 
-test('home page headers exists test', async ({ homePage }) => {
+test('@regression home page headers exists test', async ({ homePage }) => {
     let allHeaders: string[] = await homePage.getHomeHeaders();
     expect.soft(allHeaders).toHaveLength(4);
     expect.soft(allHeaders).toEqual(['My Account', 'My Orders', 'My Affiliate Account', 'Newsletter']);
@@ -26,18 +26,18 @@ test('home page headers exists test', async ({ homePage }) => {
 
 //common features test 
 
-test('App logo exist or not on Login page', ({ basePage }) => {
-    expect(basePage.isLogoVisible).toBeTruthy();
+test('@smoke App logo exist or not on home page', async ({ basePage }) => {
+    expect(await basePage.isLogoVisible()).toBeTruthy();
 });
 
-test('search box exist or not on Login page', ({ basePage }) => {
-    expect(basePage.isSearchBoxVisible).toBeTruthy();
+test('@smoke search box exist or not on home page', async ({ basePage }) => {
+    expect(await basePage.isSearchBoxVisible()).toBeTruthy();
 });
 
-test('Cart exist or not on Login page', ({ basePage }) => {
-    expect(basePage.isCartButtonVisible).toBeTruthy();
+test('@smoke Cart exist or not on home page', async ({ basePage }) => {
+    expect(await basePage.isCartButtonVisible()).toBeTruthy();
 });
 
-test('Footer Links exist or not on Login page', ({ basePage }) => {
-    expect(basePage.getPageFootersCount).toBe(16);
+test('@smoke Footer Links exist or not on home page', async ({ basePage }) => {
+    expect(await basePage.getPageFootersCount()).toBe(16);
 });

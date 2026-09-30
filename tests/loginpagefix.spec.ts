@@ -13,7 +13,7 @@ test.beforeEach(async ({ loginPage }) => {
 
 });
 
-test('login page title test', async ({ loginPage }) => {
+test('@smoke login page title test', async ({ loginPage }) => {
 
     meta({ priority: 'P1', severity: 'critical', owner: 'manish', story: '101', epic: 'epic300', feature: '30', issue: 'bug35' });
     let pageTitle = await loginPage.getPageTitle();
@@ -23,19 +23,19 @@ test('login page title test', async ({ loginPage }) => {
     expect(pageTitle).toBe('Account Login');
 });
 
-test('forgot password link test', async ({ loginPage }) => {
+test('@smoke forgot password link test', async ({ loginPage }) => {
     meta({ priority: 'P2', severity: 'blocker', owner: 'manish', story: '102', epic: 'epic300', feature: '31', issue: 'bug36' });
 
     expect(await loginPage.isForgottenPasswordLinkExist()).toBeTruthy();
 });
 
-test('returning customer header present test', async ({ loginPage }) => {
+test('@smoke returning customer header present test', async ({ loginPage }) => {
     meta({ priority: 'P2', severity: 'major', owner: 'manish', story: '102', epic: 'epic300', feature: '31', issue: 'bug37' });
 
     expect(await loginPage.isReturningCustomerHeaderPresent()).toBeTruthy();
 });
 
-test('user is able to login to the application test', async ({ loginPage, homePage }) => {
+test('@regression user is able to login to the application test', async ({ loginPage, homePage }) => {
 
     meta({ priority: 'P1', severity: 'blocker', owner: 'manish', story: 'US103', epic: 'epic300', feature: '31', issue: 'bug38' });
     await testData({ username: process.env.USERNAME!, password: process.env.PASSWORD! }, 'Login');
@@ -70,7 +70,7 @@ test('new user is continue button enabled test', async ({ loginPage }) => {
 //DD_1 - Read Data Directly from CSV File
 let testCsvData = CsvHelper.readCsv('src/testdata/logindata.csv');
 for (let row of testCsvData) {
-    test(`login to app with invalid credentials for ${row.username} - ${row.password}`, async ({ loginPage }) => {
+    test(`@regression login to app with invalid credentials for ${row.username} - ${row.password}`, async ({ loginPage }) => {
         meta({ priority: 'P2', severity: 'major', owner: 'manish', story: '102', epic: 'epic300', feature: '31', issue: 'bug37' });
         await testData(testCsvData, "Invalid Login Data");
         await loginPage.doLogin(row.username, row.password);
@@ -80,7 +80,7 @@ for (let row of testCsvData) {
 //DD_2 - Read Data Directly from JSON File
 let testJsonData = JsonHelper.readJson('src/testdata/logindata.json');
 for (let row of testJsonData) {
-    test(`login to app with invalid credentials with json for ${row.username} - ${row.password}`, async ({ loginPage }) => {
+    test(`@regression login to app with invalid credentials with json for ${row.username} - ${row.password}`, async ({ loginPage }) => {
         meta({ priority: 'P2', severity: 'major', owner: 'manish', story: '102', epic: 'epic300', feature: '31', issue: 'bug37' });
         await testData(testJsonData, "Invalid Login Data");
         await loginPage.doLogin(row.username, row.password);
@@ -90,18 +90,18 @@ for (let row of testJsonData) {
 
 //common features test 
 
-test('App logo exist or not on Login page', ({ basePage }) => {
-    expect(basePage.isLogoVisible()).toBeTruthy();
+test('@smoke App logo exist or not on login page', async ({ basePage }) => {
+    expect(await basePage.isLogoVisible()).toBeTruthy();
 });
 
-test('search box exist or not on Login page', ({ basePage }) => {
-    expect(basePage.isSearchBoxVisible()).toBeTruthy();
+test('@smoke search box exist or not on login page', async ({ basePage }) => {
+    expect(await basePage.isSearchBoxVisible()).toBeTruthy();
 });
 
-test('Cart exist or not on Login page', ({ basePage }) => {
-    expect(basePage.isCartButtonVisible()).toBeTruthy();
+test('@smoke Cart exist or not on login page', async ({ basePage }) => {
+    expect(await basePage.isCartButtonVisible()).toBeTruthy();
 });
 
-test('Footer Links exist or not on Login page', ({ basePage }) => {
-    expect(basePage.getPageFootersCount()).toBe(16);
+test('@smoke Footer Links exist or not on login page', async ({ basePage }) => {
+    expect(await basePage.getPageFootersCount()).toBe(16);
 });

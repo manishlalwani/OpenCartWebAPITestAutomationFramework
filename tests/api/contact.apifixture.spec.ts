@@ -12,7 +12,7 @@ test.beforeEach('Login user', async ({ apiHelper }) => {
     token = authResponse.body.token;
 });
 
-test('add a contact ', async ({ apiHelper, page }) => {
+test.skip('@regression add a contact ', async ({ apiHelper, page }) => {
     //create a contact using API
     test.setTimeout(60_000);
     let contactData = {

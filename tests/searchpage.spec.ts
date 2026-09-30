@@ -11,7 +11,7 @@ test.beforeEach(async ({ loginPage }) => {
 //data provider
 let productData = CsvHelper.readCsv('src/testdata/product.csv');
 for (let row of productData) {
-    test(`verify search results for ${row.searchkey} -- ${row.productname}`, async ({ homePage, searchResultsPage }) => {
+    test(`@regression verify search results for ${row.searchkey} -- ${row.productname}`, async ({ homePage, searchResultsPage }) => {
         await homePage.doSearch(row.searchkey);
         let actualResultCount = await searchResultsPage.getProductSearchResultsCount();
         console.log('Search Results Count : ', actualResultCount);
@@ -21,7 +21,7 @@ for (let row of productData) {
 }
 
 for (let row of productData) {
-    test(`verify user is able to land on product page for ${row.searchkey} -- ${row.productname}`, async ({ homePage, searchResultsPage, page }) => {
+    test(`@regression verify user is able to land on product page for ${row.searchkey} -- ${row.productname}`, async ({ homePage, searchResultsPage, page }) => {
         await homePage.doSearch(row.searchkey);
         await searchResultsPage.selectProduct(row.productname);
         expect(await page.title()).toBe(row.productname);

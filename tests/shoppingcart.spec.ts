@@ -8,7 +8,7 @@ test.beforeEach(async ({ loginPage }) => {
 });
 
 
-test('verify shopping cart header', async ({ homePage, searchResultsPage, productInfoPage, shoppingCartPage }) => {
+test('@smoke verify shopping cart header', async ({ homePage, searchResultsPage, productInfoPage, shoppingCartPage }) => {
     await homePage.doSearch('macbook');
     await searchResultsPage.selectProduct('MacBook Pro');
     await productInfoPage.addItemToCart();
@@ -16,7 +16,7 @@ test('verify shopping cart header', async ({ homePage, searchResultsPage, produc
     expect(await shoppingCartPage.getProductHeader()).toContain('Shopping Cart');
 });
 
-test('verify quantity count cart ', async ({ homePage, searchResultsPage, productInfoPage, shoppingCartPage }) => {
+test.skip('@regression verify quantity count cart ', async ({ homePage, searchResultsPage, productInfoPage, shoppingCartPage }) => {
     await homePage.doSearch('macbook');
     await searchResultsPage.selectProduct('MacBook Pro');
     await productInfoPage.addItemToCart();

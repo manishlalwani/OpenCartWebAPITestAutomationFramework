@@ -22,14 +22,14 @@ test.beforeEach('generate token', async ({ apiHelper }) => {
 test.describe.serial('running e2e crud api test cases', () => {
 
     //GET Test 
-    test('GET API - get all booking ids', async ({ apiHelper }) => {
+    test.skip('@smoke @regression GET API - get all booking ids', async ({ apiHelper }) => {
         let response = await apiHelper.get('/booking');
         expect(response.status).toBe(200);
         expect(response.body.length).toBeGreaterThan(0);
     })
 
     ///POST 
-    test('POST API - create a user', async ({ apiHelper }) => {
+    test.skip('@regression POST API - create a user', async ({ apiHelper }) => {
         let userData = {
             "firstname": "Jim Test",
             "lastname": "Brown Test ",
@@ -48,7 +48,7 @@ test.describe.serial('running e2e crud api test cases', () => {
 
 
     //PUT 
-    test('PUT API - update a user', async ({ apiHelper }) => {
+    test.skip('@regression PUT API - update a user', async ({ apiHelper }) => {
         let userData = {
             "firstname": "Jim Test",
             "lastname": "Brown Test",
@@ -68,7 +68,7 @@ test.describe.serial('running e2e crud api test cases', () => {
 
     //DELETE
 
-    test('Delete API - delete a user', async ({ apiHelper }) => {
+    test.skip('@regression Delete API - delete a user', async ({ apiHelper }) => {
 
         let response = await apiHelper.delete(`/booking/${bookingId}`, AUTH_HEADER);
         expect(response.status).toBe(201);

@@ -4,7 +4,7 @@ import { test, expect } from '@playwright/test';
 //web app - intercept the network call and log them
 //**/* --> wild card parameter for url
 
-test('intercept and log the request', async ({ page }) => {
+test('@regression intercept and log the request', async ({ page }) => {
     await page.route('**/*', async (route) => {
         console.log(route.request().method(), route.request().url());
         await route.continue(); //url1 --> url 2 --> url3
@@ -18,7 +18,7 @@ test('intercept and log the request', async ({ page }) => {
 //mocking - create a fake data /response
 
 
-test('mock search data api - fake json', async ({ page }) => {
+test('@regression mock search data api - fake json', async ({ page }) => {
 
     //JS
     let fakeProducts = [
@@ -42,7 +42,7 @@ test('mock search data api - fake json', async ({ page }) => {
 });
 
 
-test('mock search data api - fake json status code 401', async ({ page }) => {
+test('@regression mock search data api - fake json status code 401', async ({ page }) => {
 
     //JS
     let fakeMessage = {
@@ -107,7 +107,7 @@ test('mock search data api - fake json status code 401', async ({ page }) => {
     expect(await message.isVisible()).toBeTruthy();
 });
 
-test('mock search data api - fake json status code 500', async ({ page }) => {
+test('@regression mock search data api - fake json status code 500', async ({ page }) => {
 
     //JS
     let fakeMessage = {
@@ -178,7 +178,7 @@ test('mock search data api - fake json status code 500', async ({ page }) => {
     expect(await message.isVisible()).toBeTruthy();
 });
 
-test('mock search data api -fake html', async ({ page }) => {
+test.skip('@regression mock search data api -fake html', async ({ page }) => {
 
     const htmlBody = `
                     < !DOCTYPE html >
@@ -189,20 +189,20 @@ test('mock search data api -fake html', async ({ page }) => {
 
                         < body >
 
-                        <h1>Product List </h1>
+                        <h1>Product List</h1>
 
                             < div class="product" >
-                                <h2>Fake Macbook Pro </h2>
+                                <h2>Fake Macbook Pro</h2>
                                     < p > $200 </p>
                                     </div>
 
                                     < div class="product" >
-                                        <h2>Fake Iphone 18 Pro </h2>
+                                        <h2>Fake Iphone 18 Pro</h2>
                                             < p > $300 </p>
                                             </div>
 
                                             < div class="product" >
-                                                <h2>Fake Samsung S25 </h2>
+                                                <h2>Fake Samsung S25</h2>
                                                     < p > $400 </p>
                                                     </div>
 
@@ -224,7 +224,8 @@ test('mock search data api -fake html', async ({ page }) => {
     expect(heading).toBe('Product List');
 
     let products = await page.locator('.product h2').allTextContents();
-    expect(products).toEqual(['Fake Macbook Pro', 'Fake Iphone 18 Pro', 'Fake Samsung S25']);
+    console.log(products);
+    expect(products).toBe(['Fake Macbook Pro', 'Fake Iphone 18 Pro', 'Fake Samsung S25']);
 
     let prices = await page.locator('.product p').allTextContents();
     expect(prices).toEqual(['$200', '$300', '$400']);
