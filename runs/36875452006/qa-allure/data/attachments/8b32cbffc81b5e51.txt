@@ -1,0 +1,28 @@
+{
+  id: 8645533,
+  name: 'apiautomation',
+  email: 'apiautomation_1790864569125@test.com',
+  gender: 'male',
+  status: 'active'
+} 201
+{
+  id: 8645533,
+  name: 'apiautomation',
+  email: 'apiautomation_1790864569125@test.com',
+  gender: 'male',
+  status: 'active'
+} 200
+{
+  id: 8645533,
+  name: 'apiautomation-update-patch',
+  email: 'apiautomation_1790864569125@test.com',
+  gender: 'male',
+  status: 'inactive'
+} 200
+{
+  id: 8645533,
+  name: 'apiautomation-update-patch',
+  email: 'apiautomation_1790864569125@test.com',
+  gender: 'male',
+  status: 'inactive'
+} 200

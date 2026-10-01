@@ -1,0 +1,72 @@
+[
+  {
+    id: 8645533,
+    name: 'apiautomation-update-patch',
+    email: 'apiautomation_1790864569125@test.com',
+    gender: 'male',
+    status: 'inactive'
+  },
+  {
+    id: 8645532,
+    name: 'apiautomation-update',
+    email: 'apiautomation_1790864567263@test.com',
+    gender: 'male',
+    status: 'inactive'
+  },
+  {
+    id: 8645531,
+    name: 'apiautomation',
+    email: 'apiautomation_1790864565676@test.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8645529,
+    name: 'apiautomation',
+    email: 'apiautomation_1790864457710@test.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8645516,
+    name: 'apiautomation',
+    email: 'apiautomation_1790863675129@test.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8645508,
+    name: 'apiautomation-update-patch',
+    email: 'apiautomation_1790862686665@test.com',
+    gender: 'male',
+    status: 'inactive'
+  },
+  {
+    id: 8645506,
+    name: 'apiautomation-update',
+    email: 'apiautomation_1790862679984@test.com',
+    gender: 'male',
+    status: 'inactive'
+  },
+  {
+    id: 8645505,
+    name: 'apiautomation',
+    email: 'apiautomation_1790862677328@test.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8645503,
+    name: 'apiautomation',
+    email: 'apiautomation_1790862570038@test.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8644756,
+    name: 'apiautomation',
+    email: 'apiautomation_1790818454861@test.com',
+    gender: 'male',
+    status: 'active'
+  }
+] 200
