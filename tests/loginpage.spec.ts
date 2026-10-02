@@ -13,7 +13,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.skip('login page title test', async ({ page }) => {
-    let pageTitle = await loginPage.getLoginPageTitle();
+    let pageTitle = await loginPage.getPageTitle();
     console.log('Page title is : ', pageTitle);
     expect(pageTitle).toBe('Account Login');
 });

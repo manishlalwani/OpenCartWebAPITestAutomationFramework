@@ -28,26 +28,32 @@ export class BasePage {
     // App common features -- footer, logo, search
 
     async isLogoVisible(): Promise<Boolean> {
+        await this.logo.waitFor({ state: 'visible' });
         return await this.logo.isVisible();
     }
 
     async isSearchBoxVisible(): Promise<Boolean> {
+        await this.searchBox.waitFor({ state: 'visible' });
         return await this.searchBox.isVisible();
     }
 
     async isCurrentDropDownVisible(): Promise<Boolean> {
+        await this.currencyDrpDwn.waitFor({ state: 'visible' });
         return await this.currencyDrpDwn.isVisible();
     }
 
     async isCartButtonVisible(): Promise<Boolean> {
+        await this.cartBtn.first().waitFor({ state: 'visible' });
         return await this.cartBtn.isVisible();
     }
 
     async getPageFootersCount(): Promise<number> {
+        await this.footerLinks.first().waitFor({ state: 'visible' });
         return await this.footerLinks.count();
     }
 
     async getPageFooters(): Promise<string[]> {
+        await this.footerLinks.waitFor({ state: 'visible' });
         return await this.footerLinks.allInnerTexts();
     }
 

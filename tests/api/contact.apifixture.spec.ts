@@ -19,7 +19,7 @@ test.skip('@regression add a contact ', async ({ apiHelper, page }) => {
         "firstName": "Automation Testing",
         "lastName": "Manish",
         "birthdate": "1988-01-01",
-        "email": "manishtesting@test.com",
+        "email": `manishtesting${Date.now()}@test.com`,
         "phone": "8005555555",
         "street1": "1 Main St.",
         "street2": "Apartment A",

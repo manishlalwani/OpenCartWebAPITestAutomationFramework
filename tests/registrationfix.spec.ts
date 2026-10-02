@@ -31,9 +31,10 @@ test('@smoke registration page account creation test', async ({ registrationPage
 
 let testData = CsvHelper.readCsv('src/testdata/registrationuser.csv')
 for (let row of testData) {
-    test.skip(`@regression registration page account creation with users ${row.firstname} -- ${row.lastname}`, async ({ registrationPage }) => {
+    test(`@regression registration page account creation with users ${row.firstname} -- ${row.lastname}`, async ({ registrationPage }) => {
         let email = `testemail1${Date.now()}@email.com`;
-        await registrationPage.createAccount(row.firstname, row.lastname, email, row.telephone, row.password, row.passwordconfirm, true);
+        let firstname = `${row.firstname}${Date.now()}`;
+        await registrationPage.createAccount(firstname, row.lastname, email, row.telephone, row.password, row.passwordconfirm, true);
         expect(await registrationPage.isCreateAccountMessageDisplayed()).toBeTruthy();
     });
 }
@@ -41,18 +42,18 @@ for (let row of testData) {
 
 //common features test 
 
-test.skip('@smoke App logo exist or not on registration page', async ({ basePage }) => {
+test('@smoke App logo exist or not on registration page', async ({ basePage }) => {
     expect(await basePage.isLogoVisible()).toBeTruthy();
 });
 
-test.skip('@smoke search box exist or not on registration page', async ({ basePage }) => {
+test('@smoke search box exist or not on registration page', async ({ basePage }) => {
     expect(await basePage.isSearchBoxVisible()).toBeTruthy();
 });
 
-test.skip('@smoke Cart exist or not on registration page', async ({ basePage }) => {
+test('@smoke Cart exist or not on registration page', async ({ basePage }) => {
     expect(await basePage.isCartButtonVisible()).toBeTruthy();
 });
 
-test.skip('@smoke Footer Links exist or not on registration page', async ({ basePage }) => {
+test('@smoke Footer Links exist or not on registration page', async ({ basePage }) => {
     expect(await basePage.getPageFootersCount()).toBe(16);
 });

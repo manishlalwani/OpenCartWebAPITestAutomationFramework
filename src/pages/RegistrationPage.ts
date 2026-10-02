@@ -61,6 +61,7 @@ export class RegistrationPage extends BasePage {
 
 
     async isCreateAccountMessageDisplayed(): Promise<boolean> {
+        await this.acctSuccessMessage.waitFor({ state: 'visible' });
         return await this.acctSuccessMessage.isVisible();
     }
 

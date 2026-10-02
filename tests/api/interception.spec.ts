@@ -178,37 +178,35 @@ test('@regression mock search data api - fake json status code 500', async ({ pa
     expect(await message.isVisible()).toBeTruthy();
 });
 
-test.skip('@regression mock search data api -fake html', async ({ page }) => {
+test('@regression mock search data api -fake html', async ({ page }) => {
 
-    const htmlBody = `
-                    < !DOCTYPE html >
-                        <html>
-                        <head>
-                        <title>Products </title>
-                        </head>
+    const htmlBody = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Products</title>
+</head>
+<body>
 
-                        < body >
+  <h1>Product List</h1>
 
-                        <h1>Product List</h1>
+  <div class="product">
+    <h2>Fake Macbook Pro</h2>
+    <p>$200</p>
+  </div>
 
-                            < div class="product" >
-                                <h2>Fake Macbook Pro</h2>
-                                    < p > $200 </p>
-                                    </div>
+  <div class="product">
+    <h2>Fake Iphone 18 Pro</h2>
+    <p>$300</p>
+  </div>
 
-                                    < div class="product" >
-                                        <h2>Fake Iphone 18 Pro</h2>
-                                            < p > $300 </p>
-                                            </div>
+  <div class="product">
+    <h2>Fake Samsung S25</h2>
+    <p>$400</p>
+  </div>
 
-                                            < div class="product" >
-                                                <h2>Fake Samsung S25</h2>
-                                                    < p > $400 </p>
-                                                    </div>
-
-                                                    </body>
-                                                    </html>
-                                                        `;
+</body>
+</html>`;
 
     await page.route('**/index.php?route=product/search&search=macbook', async (route) => {
         await route.fulfill({
@@ -224,8 +222,12 @@ test.skip('@regression mock search data api -fake html', async ({ page }) => {
     expect(heading).toBe('Product List');
 
     let products = await page.locator('.product h2').allTextContents();
-    console.log(products);
-    expect(products).toBe(['Fake Macbook Pro', 'Fake Iphone 18 Pro', 'Fake Samsung S25']);
+    
+    await expect(page.locator('.product h2')).toHaveText([
+        "Fake Macbook Pro",
+        "Fake Iphone 18 Pro",
+        "Fake Samsung S25",
+    ]);
 
     let prices = await page.locator('.product p').allTextContents();
     expect(prices).toEqual(['$200', '$300', '$400']);
