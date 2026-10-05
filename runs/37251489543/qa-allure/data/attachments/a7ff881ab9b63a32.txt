@@ -1,0 +1,72 @@
+[
+  {
+    id: 8649332,
+    name: 'apiautomation-update-patch',
+    email: 'apiautomation_1791163798462@test.com',
+    gender: 'male',
+    status: 'inactive'
+  },
+  {
+    id: 8649333,
+    name: 'apiautomation',
+    email: 'apiautomation_1791163798606@test.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8649331,
+    name: 'apiautomation-update',
+    email: 'apiautomation_1791163796929@test.com',
+    gender: 'male',
+    status: 'inactive'
+  },
+  {
+    id: 8649329,
+    name: 'apiautomation',
+    email: 'apiautomation_1791163795632@test.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8649328,
+    name: 'apiautomation',
+    email: 'apiautomation_1791163699435@test.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8649266,
+    name: 'Bhasvan Bhattacharya Esq.',
+    email: 'bhattacharya_bhasvan_esq@kshlerin-anderson.test',
+    gender: 'female',
+    status: 'active'
+  },
+  {
+    id: 8649265,
+    name: 'Baalaaditya Mishra',
+    email: 'mishra_baalaaditya@weissnat-tromp.example',
+    gender: 'female',
+    status: 'active'
+  },
+  {
+    id: 8649264,
+    name: 'Vaishnavi Rana',
+    email: 'rana_vaishnavi@frami.example',
+    gender: 'female',
+    status: 'inactive'
+  },
+  {
+    id: 8649263,
+    name: 'Digambara Patel',
+    email: 'patel_digambara@bradtke-thiel.example',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8649262,
+    name: 'Jaya Dhawan',
+    email: 'jaya_dhawan@abernathy.test',
+    gender: 'male',
+    status: 'inactive'
+  }
+] 200
