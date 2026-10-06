@@ -1,0 +1,7 @@
+{
+  id: 8652089,
+  name: 'manish automation test',
+  email: 'manishautomation_1791257490591@test.com',
+  gender: 'male',
+  status: 'inactive'
+} 200

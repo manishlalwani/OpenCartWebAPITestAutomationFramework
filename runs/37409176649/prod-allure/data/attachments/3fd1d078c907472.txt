@@ -1,0 +1,72 @@
+[
+  {
+    id: 8652091,
+    name: 'apiautomation',
+    email: 'apiautomation_1791257732138@test.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8652090,
+    name: 'apiautomation',
+    email: 'apiautomation_1791257649524@test.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8652088,
+    name: 'apiautomation',
+    email: 'apiautomation_1791257489511@test.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8652087,
+    name: 'apiautomation-update-patch',
+    email: 'apiautomation_1791257488394@test.com',
+    gender: 'male',
+    status: 'inactive'
+  },
+  {
+    id: 8652085,
+    name: 'apiautomation-update',
+    email: 'apiautomation_1791257486928@test.com',
+    gender: 'male',
+    status: 'inactive'
+  },
+  {
+    id: 8652084,
+    name: 'apiautomation',
+    email: 'apiautomation_1791257485331@test.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8652080,
+    name: 'apiautomation',
+    email: 'apiautomation_1791257387139@test.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8651553,
+    name: 'The Hon. Ekaparnika Nehru',
+    email: 'nehru_hon_the_ekaparnika@dickens-mohr.example',
+    gender: 'male',
+    status: 'inactive'
+  },
+  {
+    id: 8651551,
+    name: 'Subhashini Deshpande',
+    email: 'deshpande_subhashini@kerluke-ziemann.example',
+    gender: 'female',
+    status: 'active'
+  },
+  {
+    id: 8651550,
+    name: 'Amb. Aagneya Dutta',
+    email: 'amb_dutta_aagneya@oreilly-berge.test',
+    gender: 'male',
+    status: 'active'
+  }
+] 200

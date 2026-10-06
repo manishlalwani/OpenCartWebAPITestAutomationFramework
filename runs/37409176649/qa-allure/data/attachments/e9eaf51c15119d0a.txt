@@ -1,0 +1,25 @@
+user creds : jacobbetthel@test.com -- test123
+Search key is :  macbook
+product name  MacBook Pro
+Brand: Apple
+Brand
+ Apple
+Product Code: Product 18
+Product Code
+ Product 18
+Reward Points: 800
+Reward Points
+ 800
+Availability: Out Of Stock
+Availability
+ Out Of Stock
+Actual Product Details:  Map(8) {
+  'productheader' => 'MacBook Pro',
+  'productimagecount' => 4,
+  'Brand' => 'Apple',
+  'Product Code' => 'Product 18',
+  'Reward Points' => '800',
+  'Availability' => 'Out Of Stock',
+  'productprice' => '$2,000.00',
+  'extraprice' => '$2,000.00'
+}
