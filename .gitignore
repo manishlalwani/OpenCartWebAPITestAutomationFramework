@@ -3,13 +3,18 @@
 node_modules/
 /test-results/
 /playwright-report/
-/blob-report/
+/blob-*/
 /playwright/.cache/
 /playwright/.auth/
 /reports/
 /reporting-labs/
-/allure-results/
+/allure-*/
 /allure-report/
+/reports-*/
+/rl-shard-*/
+/merged-*/
+/reporting-*/
+/all-*/
 reporting-labs.history.json
 
 #build

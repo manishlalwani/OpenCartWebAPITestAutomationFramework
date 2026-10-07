@@ -5,8 +5,8 @@ export class ShoppingCartPage extends BasePage {
 
     //1. Private locators
     private readonly header: Locator;
-    private readonly quantity : Locator;
-    
+    private readonly quantity: Locator;
+
 
 
     //2. constructor  of the page  init the locators
@@ -14,7 +14,7 @@ export class ShoppingCartPage extends BasePage {
     constructor(page: Page) {
         super(page);
         this.header = page.getByRole('heading', { level: 1 });
-        this.quantity = page.locator('[name*="quantity"]');
+        this.quantity = page.locator('[name*="quantity"]').last();
 
     }
 
@@ -23,15 +23,15 @@ export class ShoppingCartPage extends BasePage {
     async getProductHeader(): Promise<string> {
         return await this.header.innerText();
     }
-    async getQuantityCount(){
+    async getQuantityCount() {
         let text = await this.quantity.getAttribute('value')
         console.log(text);
         return text;
     }
 
- 
 
-    
+
+
 
 
 
