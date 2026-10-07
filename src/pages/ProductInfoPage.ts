@@ -25,7 +25,7 @@ export class ProductInfoPage extends BasePage {
         this.productInfoMap = new Map<string, string | number>();
         this.quantity = page.getByRole('textbox', { name: 'Qty' });
         this.addToCart = page.getByRole('button', { name: 'Add to Cart' });
-        this.shoppingCartLink = page.getByRole('link', { name: 'shopping cart' });
+        this.shoppingCartLink = page.getByRole('link', { name: 'shopping cart' }).last();
 
     }
 

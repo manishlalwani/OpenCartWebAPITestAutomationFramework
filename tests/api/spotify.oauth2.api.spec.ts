@@ -24,7 +24,7 @@ test.beforeEach('POST - generate the access token', async ({ request }) => {
     accessToken = jsonResponse.access_token;
 });
 
-test.skip('@smoke GET - albums data test', async ({ request }) => {
+test('@smoke GET - albums data test', async ({ request }) => {
     let baseURL = 'https://api.spotify.com';
     let endPointURL = '/v1/albums/4aawyAB9vmqN3uQ7FjRGTy';
     let albumResponse = await request.get(`${baseURL}${endPointURL}`, {
@@ -35,9 +35,9 @@ test.skip('@smoke GET - albums data test', async ({ request }) => {
 
     expect(albumResponse.status()).toBe(200);
     let jsonBody = await albumResponse.json();
-    console.log(jsonBody.album_type);
-    console.log(jsonBody.total_tracks);
-    console.log(jsonBody.externa_urls.spotify);
-    console.log(jsonBody.images.length);
+    expect(jsonBody.album_type).toBe('album');
+    expect(jsonBody.total_tracks).toBe(18);
+    expect(jsonBody.external_urls.spotify).toContain('https://open.spotify.com/album/4aawyAB9vmqN3uQ7FjRGTy');
+    expect(jsonBody.images.length).toBe(3);
   
 })
