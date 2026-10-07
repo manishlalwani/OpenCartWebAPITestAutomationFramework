@@ -1,0 +1,72 @@
+[
+  {
+    id: 8655429,
+    name: 'apiautomation',
+    email: 'apiautomation_1791393193663@test.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8655425,
+    name: 'apiautomation',
+    email: 'apiautomation_1791393095239@test.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8655420,
+    name: 'apiautomation-update-patch',
+    email: 'apiautomation_1791392971224@test.com',
+    gender: 'male',
+    status: 'inactive'
+  },
+  {
+    id: 8655421,
+    name: 'apiautomation',
+    email: 'apiautomation_1791392971757@test.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8655418,
+    name: 'apiautomation-update',
+    email: 'apiautomation_1791392969539@test.com',
+    gender: 'male',
+    status: 'inactive'
+  },
+  {
+    id: 8655417,
+    name: 'apiautomation',
+    email: 'apiautomation_1791392968597@test.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8655410,
+    name: 'apiautomation',
+    email: 'apiautomation_1791392872701@test.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8655391,
+    name: 'apiautomation',
+    email: 'apiautomation_1791391989433@test.com',
+    gender: 'male',
+    status: 'active'
+  },
+  {
+    id: 8655390,
+    name: 'apiautomation-update-patch',
+    email: 'apiautomation_1791391988337@test.com',
+    gender: 'male',
+    status: 'inactive'
+  },
+  {
+    id: 8655388,
+    name: 'apiautomation-update',
+    email: 'apiautomation_1791391986444@test.com',
+    gender: 'male',
+    status: 'inactive'
+  }
+] 200
