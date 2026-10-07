@@ -1,0 +1,5 @@
+{
+  access_token: 'BQAZA4o7zZT6SqJ6uOPlFZmhBohXoNxnOl9bMKJ9ZhHbpg43cww9fu_F44xSobvV-r1vgj36k4tOxnxKAmRRDubRK-jJhZyXAMEZyGfy8lm0zaGwyzlQxoPmXBO5CFCWF9OwrNofUId4',
+  token_type: 'Bearer',
+  expires_in: 3600
+}

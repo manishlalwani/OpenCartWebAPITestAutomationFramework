@@ -1,0 +1,3 @@
+user creds : jacobbetthel@test.com -- test123
+Search key is :  imac
+product name  iMac
